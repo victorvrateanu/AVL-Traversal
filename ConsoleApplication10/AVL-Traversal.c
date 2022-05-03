@@ -54,6 +54,57 @@ Nod* PrimulFiu(Nod* N)
 		return N->stanga;
 }
 
+
+
+//functie ce roteste spre dreapta subarborele
+struct Nod* RotatieDreapta(struct Nod* y)
+{
+	struct Nod* x = y->stanga;
+	struct Nod* T2 = x->dreapta;
+
+	// roteste
+	x->dreapta = y;
+	y->stanga = T2;
+
+	// inaltimile
+	y->inaltime = max(inaltime(y->stanga), inaltime(y->dreapta)) + 1;
+	x->inaltime = max(inaltime(x->stanga), inaltime(x->dreapta)) + 1;
+
+	// returnam noua radacina
+	return x;
+}
+
+
+//functie ce roteste spre stanga subarborele
+struct Nod* RotatieStanga(struct Nod* x)
+{
+	struct Nod* y = x->dreapta;
+	struct Nod* T2 = y->stanga;
+
+	// Roteste
+	y->stanga = x;
+	x->dreapta = T2;
+
+	//Inaltimile
+	x->inaltime = max(inaltime(x->stanga), inaltime(x->dreapta)) + 1;
+	y->inaltime = max(inaltime(y->stanga), inaltime(y->dreapta)) + 1;
+
+	//returnam noua radacina
+	return y;
+}
+
+
+//aflam factorul de balansare
+int factorBalansare(struct Nod* N)
+{
+	if (N == NULL)
+		return 0;
+	return inaltime(N->stanga) - inaltime(N->dreapta);
+}
+
+
+
+
 //functie ce gaseste nodul cheii pentru a descoperi FrateleDreapta
 Nod* nodCheie(Nod* radacina, unsigned int chei)
 {
@@ -170,52 +221,6 @@ struct Nod* nouNod(int cheie)
 }
 
 
-//functie ce roteste spre dreapta subarborele
-struct Nod* RotatieDreapta(struct Nod* y)
-{
-	struct Nod* x = y->stanga;
-	struct Nod* T2 = x->dreapta;
-
-	// roteste
-	x->dreapta = y;
-	y->stanga = T2;
-
-	// inaltimile
-	y->inaltime = max(inaltime(y->stanga), inaltime(y->dreapta)) + 1;
-	x->inaltime = max(inaltime(x->stanga), inaltime(x->dreapta)) + 1;
-
-	// returnam noua radacina
-	return x;
-}
-
-
-//functie ce roteste spre stanga subarborele
-struct Nod* RotatieStanga(struct Nod* x)
-{
-	struct Nod* y = x->dreapta;
-	struct Nod* T2 = y->stanga;
-
-	// Roteste
-	y->stanga = x;
-	x->dreapta = T2;
-
-	//Inaltimile
-	x->inaltime = max(inaltime(x->stanga), inaltime(x->dreapta)) + 1;
-	y->inaltime = max(inaltime(y->stanga), inaltime(y->dreapta)) + 1;
-
-	//returnam noua radacina
-	return y;
-}
-
-
-//aflam factorul de balansare
-int factorBalansare(struct Nod* N)
-{
-	if (N == NULL)
-		return 0;
-	return inaltime(N->stanga) - inaltime(N->dreapta);
-}
-
 
 //functie recursiva de inserare a cheii in subarborele cu radacina N si returneaza noua radacina
 struct Nod* Insereaza(struct Nod* N, int cheie)
@@ -276,62 +281,6 @@ struct Nod* Max2(struct Nod* N)
 
 
 
-FILE* fout;
-//tranvesarea in preordine a arborelui
-void Preordine(struct Nod* radacina)
-{
-	if (radacina != NULL)
-	{
-		printf("%d ", radacina->cheie);
-		Preordine(radacina->stanga);
-		Preordine(radacina->dreapta);
-	}
-}
-
-//travesarea inordine a arborelui
-void Inordine(struct Nod* radacina)
-{
-	if (radacina != NULL)
-	{
-		Inordine(radacina->stanga);
-		printf("%d ", radacina->cheie);
-		Inordine(radacina->dreapta);
-	}
-}
-
-//traversarea in postordine a arborelui
-void Postordine(struct Nod* radacina)
-{
-	if (radacina != NULL)
-	{
-		Postordine(radacina->stanga);
-		Postordine(radacina->dreapta);
-		printf("%d ", radacina->cheie);
-	}
-}
-/*
-void printLevelOrder(struct Nod* radacina)
-{
-	int h = inaltine(radacina);
-	int i;
-	for (i = 1; i <= h; i++)
-		printCurrentLevel(radacina, i);
-}
-
-
-void printCurrentLevel(struct Nod* radacina, int nivel)
-{
-	if (radacina == NULL)
-		return;
-	if (nivel == 1)
-		printf("%d ", radacina->cheie);
-	else if (nivel > 1) {
-		printCurrentLevel(radacina->stanga, nivel - 1);
-		printCurrentLevel(radacina->dreapta, nivel - 1);
-	}
-}
-*/
-//functie pt suprimarea celor k noduri
 
 
 
