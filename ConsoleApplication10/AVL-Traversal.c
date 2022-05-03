@@ -283,6 +283,64 @@ struct Nod* Max2(struct Nod* N)
 
 
 
+FILE* fout;
+//tranvesarea in preordine a arborelui
+void Preordine(struct Nod* radacina)
+{
+	if (radacina != NULL)
+	{
+		printf("%d ", radacina->cheie);
+		Preordine(radacina->stanga);
+		Preordine(radacina->dreapta);
+	}
+}
+
+//travesarea inordine a arborelui
+void Inordine(struct Nod* radacina)
+{
+	if (radacina != NULL)
+	{
+		Inordine(radacina->stanga);
+		printf("%d ", radacina->cheie);
+		Inordine(radacina->dreapta);
+	}
+}
+
+//traversarea in postordine a arborelui
+void Postordine(struct Nod* radacina)
+{
+	if (radacina != NULL)
+	{
+		Postordine(radacina->stanga);
+		Postordine(radacina->dreapta);
+		printf("%d ", radacina->cheie);
+	}
+}
+/*
+void printLevelOrder(struct Nod* radacina)
+{
+	int h = inaltine(radacina);
+	int i;
+	for (i = 1; i <= h; i++)
+		printCurrentLevel(radacina, i);
+}
+
+
+void printCurrentLevel(struct Nod* radacina, int nivel)
+{
+	if (radacina == NULL)
+		return;
+	if (nivel == 1)
+		printf("%d ", radacina->cheie);
+	else if (nivel > 1) {
+		printCurrentLevel(radacina->stanga, nivel - 1);
+		printCurrentLevel(radacina->dreapta, nivel - 1);
+	}
+}
+*/
+//functie pt suprimarea celor k noduri
+
+
 
 int main()
 {
