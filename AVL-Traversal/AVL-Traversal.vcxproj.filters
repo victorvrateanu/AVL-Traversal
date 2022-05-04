@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication10.c">
+    <ClCompile Include="AVL-Traversal.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

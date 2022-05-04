@@ -305,7 +305,7 @@ void Inordine(struct Nod* radacina)
 		Inordine(radacina->dreapta);
 	}
 }
-
+void printCurrentLevel(struct Nod* root, int level);
 //traversarea in postordine a arborelui
 void Postordine(struct Nod* radacina)
 {
@@ -316,10 +316,10 @@ void Postordine(struct Nod* radacina)
 		printf("%d ", radacina->cheie);
 	}
 }
-/*
+
 void printLevelOrder(struct Nod* radacina)
 {
-	int h = inaltine(radacina);
+	int h = inaltime(radacina);
 	int i;
 	for (i = 1; i <= h; i++)
 		printCurrentLevel(radacina, i);
@@ -337,8 +337,7 @@ void printCurrentLevel(struct Nod* radacina, int nivel)
 		printCurrentLevel(radacina->dreapta, nivel - 1);
 	}
 }
-*/
-//functie pt suprimarea celor k noduri
+
 
 
 
@@ -348,19 +347,23 @@ int main()
 	radacina = initializeaza(radacina);
 
 	int c[6] = { 10,20,30,40,50,25 };
-	
+
 	for (int i = 0; i < 6; i++) {
 		radacina = Insereaza(radacina, c[i]);
 	}
 
 
-	
+	printf("Inordine:   ");
 	Inordine(radacina);
 	printf("\n\n");
+	printf("Preordine:   ");
 	Preordine(radacina);
 	printf("\n\n");
+	printf("Postordine:   ");
 	Postordine(radacina);
-
+	printf("\n\n");
+	printf("Pe nivel:   ");
+	printLevelOrder(radacina);
 
 
 	_getch();

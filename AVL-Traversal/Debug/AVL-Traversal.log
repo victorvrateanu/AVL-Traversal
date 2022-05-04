@@ -1,0 +1,18 @@
+﻿  AVL-Traversal.c
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(70,16): warning C4013: 'inaltime' undefined; assuming extern returning int
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(141,14): warning C4047: 'return': 'unsigned int' differs in levels of indirection from 'void *'
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(149,14): warning C4047: 'return': 'unsigned int' differs in levels of indirection from 'void *'
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(154,20): warning C4047: 'return': 'unsigned int' differs in levels of indirection from 'Nod *'
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(158,14): warning C4047: 'return': 'unsigned int' differs in levels of indirection from 'void *'
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(167,3): warning C4033: 'Cheie' must return a value
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(232,12): warning C4018: '<': signed/unsigned mismatch
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(234,17): warning C4018: '>': signed/unsigned mismatch
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(249,29): warning C4018: '<': signed/unsigned mismatch
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(253,30): warning C4018: '>': signed/unsigned mismatch
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(257,29): warning C4018: '>': signed/unsigned mismatch
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(264,30): warning C4018: '<': signed/unsigned mismatch
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(369,8): warning C4013: '_getch' undefined; assuming extern returning int
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(160): warning C4715: 'FrateDreapta': not all control paths return a value
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(170): warning C4715: 'Cheie': not all control paths return a value
+C:\Users\farai\source\repos\AVL-Traversal\AVL-Traversal\AVL-Traversal.c(193): warning C4715: 'initializeaza': not all control paths return a value
+  AVL-Traversal.vcxproj -> C:\Users\farai\source\repos\AVL-Traversal\Debug\AVL-Traversal.exe
